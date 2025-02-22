@@ -1,7 +1,11 @@
-from database.database import Database, EmployeeTable, DepartmentTable, EmployeeLeaveTable
+from database.database import (
+    Database,
+    DepartmentTable,
+    EmployeeLeaveTable,
+    EmployeeTable,
+)
 
-
-if __name__ == "__main__" :
+if __name__ == "__main__":
     db = Database()
 
     # Создание таблиц в базе данных

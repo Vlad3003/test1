@@ -10,18 +10,31 @@ repos:
     hooks:
       - id: black
         stages: [pre-commit, pre-push]
+        args:
+          - '-l'
+          - '79'
+          - '-t'
+          - 'py312'
 
   - repo: https://github.com/PyCQA/flake8
     rev: 7.1.2
     hooks:
       - id: flake8
         stages: [pre-commit, pre-push]
+        args:
+          - '--ignore'
+          - 'E731'
 
   - repo: https://github.com/PyCQA/isort
     rev: 6.0.0
     hooks:
       - id: isort
         stages: [pre-commit, pre-push]
+        args:
+          - '-l'
+          - '79'
+          - '--profile'
+          - 'black'
 
   - repo: local
     hooks:
@@ -31,5 +44,6 @@ repos:
         files: ^tests/.*\.py$
         verbose: true
         types: [python]
+        always_run: true
         language: system
         stages: [pre-commit, pre-push]
