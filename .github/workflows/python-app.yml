@@ -30,4 +30,4 @@ jobs:
         poetry install --directory ./lab3 --no-root
     - name: Test with pytest
       run: |
-        poetry run --directory ./lab3 pytest --cov --cov-report=term-missing --cov-fail-ubder=100
+        poetry run --directory ./lab3 pytest --cov --cov-report=term-missing --cov-fail-under=100
